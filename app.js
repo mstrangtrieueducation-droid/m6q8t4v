@@ -50,14 +50,14 @@ const sections = [
   {
     letter: "D",
     title: "Circle or write the correct words.",
-    note: "Nhìn từ đứng đầu câu (He, She, It) rồi chọn đúng dạng động từ.",
+    note: "Nhìn chủ ngữ đầu câu: He = cậu ấy, She = cô ấy, It = nó. Sau đó chọn đúng dạng động từ.",
     points: 5,
     questions: [
-      choice("D1", "He ___ a cow.", ["has", "have"], "has", "He (cậu ấy) đi với has. Câu đúng là: He has a cow."),
-      choice("D2", "It ___ need water.", ["don’t", "doesn’t"], "doesn’t", "Với It, câu phủ định dùng doesn’t. Câu đúng là: It doesn’t need water."),
-      choice("D3", "She ___ an ice cream.", ["wants", "want"], "wants", "Với She, động từ want thêm -s thành wants. Câu đúng là: She wants an ice cream."),
-      choice("D4", "It ___ milk.", ["like", "likes"], "likes", "Với It, động từ like thêm -s thành likes. Câu đúng là: It likes milk."),
-      choice("D5", "He doesn’t ___ a doll.", ["has", "have"], "have", "Khi đã có doesn’t, động từ phía sau giữ nguyên là have, không dùng has. Câu đúng là: He doesn’t have a doll.")
+      choice("D1", "He ___ a cow.", ["has", "have"], "has", "He dùng để chỉ một người nam (cậu ấy/anh ấy). Với He, have đổi thành has. Câu đúng là: He has a cow."),
+      choice("D2", "It ___ need water.", ["don’t", "doesn’t"], "doesn’t", "It dùng để chỉ một con vật hoặc đồ vật (nó). Muốn nói “nó không cần”, ta dùng doesn’t need. Câu đúng là: It doesn’t need water."),
+      choice("D3", "She ___ an ice cream.", ["wants", "want"], "wants", "She dùng để chỉ một người nữ (cô ấy). Với She, động từ want thêm -s thành wants. Câu đúng là: She wants an ice cream."),
+      choice("D4", "It ___ milk.", ["like", "likes"], "likes", "It dùng để chỉ một con vật hoặc đồ vật (nó). Với It, động từ like thêm -s thành likes. Câu đúng là: It likes milk."),
+      choice("D5", "He doesn’t ___ a doll.", ["has", "have"], "have", "He dùng để chỉ một người nam (cậu ấy/anh ấy). Khi đã có doesn’t, động từ phía sau giữ nguyên là have, không dùng has. Câu đúng là: He doesn’t have a doll.")
     ]
   },
   {
@@ -66,9 +66,9 @@ const sections = [
     note: "Quan sát hình rồi điền cụm từ phù hợp.",
     points: 3,
     questions: [
-      input("E1", "She ___ soup.", ["doesn't want", "does not want"], "Cô bé không muốn soup nên dùng doesn’t want. Sau doesn’t, want giữ nguyên. Câu đúng là: She doesn’t want soup.", `${ASSET}page2-img_p1_2.png`),
-      input("E2", "He ___ cucumbers.", ["doesn't like", "does not like"], "Cậu bé không thích cucumbers nên dùng doesn’t like. Sau doesn’t, like giữ nguyên. Câu đúng là: He doesn’t like cucumbers.", `${ASSET}page2-img_p1_4.png`),
-      input("E3", "She ___ a backpack.", ["needs"], "Cô bé cần một chiếc backpack. Với She, động từ need thêm -s thành needs. Câu đúng là: She needs a backpack.", `${ASSET}page2-img_p1_5.png`)
+      input("E1", "She ___ soup.", ["doesn't want", "does not want"], "She dùng để chỉ một người nữ (cô ấy). Trong hình, cô bé không muốn soup nên dùng doesn’t want. Sau doesn’t, want giữ nguyên. Câu đúng là: She doesn’t want soup.", `${ASSET}page2-img_p1_2.png`),
+      input("E2", "He ___ cucumbers.", ["doesn't like", "does not like"], "He dùng để chỉ một người nam (cậu ấy/anh ấy). Trong hình, cậu bé không thích cucumbers nên dùng doesn’t like. Sau doesn’t, like giữ nguyên. Câu đúng là: He doesn’t like cucumbers.", `${ASSET}page2-img_p1_4.png`),
+      input("E3", "She ___ a backpack.", ["needs"], "She dùng để chỉ một người nữ (cô ấy). Trong hình, cô bé cần một chiếc backpack. Với She, need thêm -s thành needs. Câu đúng là: She needs a backpack.", `${ASSET}page2-img_p1_5.png`)
     ]
   },
   {
@@ -144,20 +144,20 @@ const sections = [
         ["what does he", "what does he want", "what does the boy want"],
         ["he wants", "he wants stickers and pins", "he wants pins and stickers"],
         "want?", "stickers and pins.",
-        "A hỏi: What does he want? Sau does, want giữ nguyên. B trả lời: He wants stickers and pins."),
+        "He dùng để chỉ một người nam (cậu ấy/anh ấy). A hỏi: What does he want? Sau does, want giữ nguyên. B trả lời: He wants stickers and pins."),
       pair("K2", "Picture 2", `${ASSET}page4-img_p3_7.png`,
         ["does she", "does she need a pen"], ["yes she does"],
         "need a pen?", "",
-        "A hỏi: Does she need a pen? Sau does, need giữ nguyên. B trả lời ngắn: Yes, she does."),
+        "She dùng để chỉ một người nữ (cô ấy). A hỏi: Does she need a pen? Sau does, need giữ nguyên. B trả lời ngắn: Yes, she does."),
       pair("K3", "Picture 3", `${ASSET}page4-img_p3_8.png`,
         ["does it", "does it like milk", "does the cat like milk"], ["yes it does"],
         "like milk?", "",
-        "A hỏi: Does it like milk? Sau does, like giữ nguyên. B trả lời ngắn: Yes, it does."),
+        "It dùng để chỉ một con vật hoặc đồ vật (nó). A hỏi: Does it like milk? Sau does, like giữ nguyên. B trả lời ngắn: Yes, it does."),
       pair("K4", "Picture 4", `${ASSET}page4-img_p3_9.png`,
         ["what does she", "what does she have", "what does the girl have"],
         ["she has", "she has grapes and mangoes", "she has mangoes and grapes"],
         "have?", "grapes and mangoes.",
-        "A hỏi: What does she have? Sau does, have giữ nguyên. B trả lời: She has grapes and mangoes.")
+        "She dùng để chỉ một người nữ (cô ấy). A hỏi: What does she have? Sau does, have giữ nguyên. B trả lời: She has grapes and mangoes.")
     ]
   }
 ];
