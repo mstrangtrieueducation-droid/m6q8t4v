@@ -189,6 +189,18 @@ main { width: min(100% - 32px, 1160px); margin: 0 auto; }
 .question.is-missing { margin-inline: -12px; padding-inline: 12px; border-left: 4px solid var(--coral); background: var(--coral-soft); }
 .paired-inputs { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
 .input-label { display: grid; gap: 6px; color: var(--muted); font-size: 12px; font-weight: 700; }
+.sentence-completion {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(150px, 1fr) auto;
+  align-items: center;
+  gap: 9px;
+  color: var(--ink);
+  font-size: 17px;
+  font-weight: 700;
+}
+.sentence-completion .answer-input { min-width: 150px; }
+.sentence-completion b { flex: 0 1 auto; font-weight: 700; white-space: normal; }
 
 .submit-panel, .score-panel {
   display: flex; align-items: center; justify-content: space-between; gap: 30px;
@@ -238,6 +250,7 @@ footer { padding: 28px 16px 34px; color: var(--muted); text-align: center; font-
   .choice-grid { grid-template-columns: 1fr; }
   .choice { min-height: 52px; }
   .paired-inputs { grid-template-columns: 1fr; }
+  .sentence-completion { grid-template-columns: minmax(0, 1fr) auto; gap: 7px; }
   .submit-panel, .score-panel { margin: 12px 0 0; padding: 25px 18px; flex-direction: column; align-items: stretch; box-shadow: none; }
   .submit-panel .button, .score-panel .button { width: 100%; }
   .answer-review { gap: 8px; background: var(--canvas); }

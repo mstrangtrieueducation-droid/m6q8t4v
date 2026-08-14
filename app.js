@@ -133,18 +133,22 @@ const sections = [
     points: 8,
     questions: [
       pair("K1", "Picture 1", `${ASSET}page4-img_p3_6.png`,
-        ["what does he want", "what does the boy want"],
-        ["he wants stickers and pins", "he wants pins and stickers"],
+        ["what does he", "what does he want", "what does the boy want"],
+        ["he wants", "he wants stickers and pins", "he wants pins and stickers"],
+        "want?", "stickers and pins.",
         "Dùng What does he want? để hỏi mong muốn; câu trả lời là He wants stickers and pins."),
       pair("K2", "Picture 2", `${ASSET}page4-img_p3_7.png`,
-        ["does she need a pen"], ["yes she does"],
+        ["does she", "does she need a pen"], ["yes she does"],
+        "need a pen?", "",
         "Câu hỏi dùng Does she need a pen?; trả lời khẳng định Yes, she does."),
       pair("K3", "Picture 3", `${ASSET}page4-img_p3_8.png`,
-        ["does it like milk", "does the cat like milk"], ["yes it does"],
+        ["does it", "does it like milk", "does the cat like milk"], ["yes it does"],
+        "like milk?", "",
         "Câu hỏi dùng Does it like milk?; trả lời khẳng định Yes, it does."),
       pair("K4", "Picture 4", `${ASSET}page4-img_p3_9.png`,
-        ["what does she have", "what does the girl have"],
-        ["she has grapes and mangoes", "she has mangoes and grapes"],
+        ["what does she", "what does she have", "what does the girl have"],
+        ["she has", "she has grapes and mangoes", "she has mangoes and grapes"],
+        "have?", "grapes and mangoes.",
         "Dùng What does she have?; câu trả lời là She has grapes and mangoes.")
     ]
   }
@@ -158,8 +162,8 @@ function input(id, prompt, answers, explanation, image = "") {
   return { id, type: "input", prompt, answers, explanation, image, points: 1 };
 }
 
-function pair(id, prompt, image, questionAnswers, responseAnswers, explanation) {
-  return { id, type: "pair", prompt, image, questionAnswers, responseAnswers, explanation, points: 2 };
+function pair(id, prompt, image, questionAnswers, responseAnswers, questionSuffix, responseSuffix, explanation) {
+  return { id, type: "pair", prompt, image, questionAnswers, responseAnswers, questionSuffix, responseSuffix, explanation, points: 2 };
 }
 
 const form = document.querySelector("#testForm");
@@ -171,7 +175,7 @@ const results = document.querySelector("#results");
 const answerReview = document.querySelector("#answerReview");
 const scoreValue = document.querySelector("#scoreValue");
 const scoreMessage = document.querySelector("#scoreMessage");
-const STORAGE_KEY = "discover1-written-test6-v1";
+const STORAGE_KEY = "discover1-written-test6-v2";
 
 renderSections();
 restoreProgress();
@@ -262,8 +266,8 @@ function renderQuestion(section, question, index) {
     control = `<input class="answer-input" data-input="${question.id}" autocomplete="off" spellcheck="false" placeholder="Nhập câu trả lời">`;
   } else {
     control = `<div class="paired-inputs">
-      <label class="input-label">Question<input class="answer-input" data-pair="question" autocomplete="off" spellcheck="false" placeholder="Complete the question"></label>
-      <label class="input-label">Answer<input class="answer-input" data-pair="answer" autocomplete="off" spellcheck="false" placeholder="Complete the answer"></label>
+      <label class="input-label"><span>Question</span><span class="sentence-completion"><input class="answer-input" data-pair="question" autocomplete="off" spellcheck="false" placeholder="Điền phần còn thiếu"><b>${question.questionSuffix}</b></span></label>
+      <label class="input-label"><span>Answer</span><span class="sentence-completion"><input class="answer-input" data-pair="answer" autocomplete="off" spellcheck="false" placeholder="Điền phần còn thiếu">${question.responseSuffix ? `<b>${question.responseSuffix}</b>` : ""}</span></label>
     </div>`;
   }
   return `<article class="question" data-id="${question.id}" data-section="${section.letter}">
@@ -329,7 +333,7 @@ function gradeTest() {
       const answerCorrect = matches(value.answer, question.responseAnswers);
       earned = Number(questionCorrect) + Number(answerCorrect);
       correct = earned === 2;
-      shownAnswer = `${question.questionAnswers[0]} / ${question.responseAnswers[0]}`;
+      shownAnswer = `${joinSentence(question.questionAnswers[0], question.questionSuffix)} / ${joinSentence(question.responseAnswers[0], question.responseSuffix)}`;
     } else {
       correct = matches(value, question.answers);
       earned = correct ? 1 : 0;
@@ -424,3 +428,7 @@ function escapeHtml(value) {
 }
 
 function escapeAttr(value) { return escapeHtml(value).replace(/'/g, "&#39;"); }
+
+function joinSentence(answer, suffix) {
+  return `${answer}${suffix ? ` ${suffix}` : ""}`.trim();
+}
