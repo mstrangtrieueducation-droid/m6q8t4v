@@ -19,14 +19,15 @@ const sections = [
   {
     letter: "B",
     title: "Look and write the words.",
-    note: "Dùng các từ: game, comic book, pins, board game, doll.",
+    note: "Chọn từ trong Word Bank để điền vào đúng hình.",
     points: 4,
+    wordBank: ["game", "comic book", "pins", "board game", "doll"],
     sectionImage: `${ASSET}page1-img_p0_5.png`,
     imageMarkers: [
-      { label: "1", left: "74%", top: "69%" },
-      { label: "2", left: "30%", top: "18%" },
-      { label: "3", left: "72%", top: "17%" },
-      { label: "4", left: "28%", top: "69%" }
+      { label: "1", left: "92%", top: "67%" },
+      { label: "2", left: "13%", top: "21%" },
+      { label: "3", left: "82%", top: "18%" },
+      { label: "4", left: "10%", top: "68%" }
     ],
     questions: [
       input("B1", "Picture 1", ["board game"], "Hình số 1 là một board game."),
@@ -254,6 +255,7 @@ function renderSections() {
         <span class="section-points">/${section.points}</span>
       </header>
       ${section.audio ? `<div class="audio-panel"><p>Audio phần ${section.letter}</p><audio controls preload="metadata" src="${section.audio}"></audio></div>` : ""}
+      ${renderWordBank(section)}
       ${renderSectionImage(section)}
       <div class="question-list">${section.questions.map((question, index) => renderQuestion(section, question, index)).join("")}</div>
     `;
@@ -285,6 +287,14 @@ function renderQuestion(section, question, index) {
       ${control}
     </div>
   </article>`;
+}
+
+function renderWordBank(section) {
+  if (!section.wordBank) return "";
+  return `<div class="word-bank" aria-label="Word Bank">
+    <span class="word-bank-title">WORD BANK</span>
+    <div class="word-bank-items">${section.wordBank.map(word => `<span>${word}</span>`).join("")}</div>
+  </div>`;
 }
 
 function renderSectionImage(section) {
