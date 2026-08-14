@@ -24,10 +24,10 @@ const sections = [
     wordBank: ["game", "comic book", "pins", "board game", "doll"],
     sectionImage: `${ASSET}page1-img_p0_5.png`,
     imageMarkers: [
-      { label: "1", left: "92%", top: "67%" },
-      { label: "2", left: "13%", top: "21%" },
-      { label: "3", left: "82%", top: "18%" },
-      { label: "4", left: "10%", top: "68%" }
+      { label: "1", left: "47%", top: "78%" },
+      { label: "2", left: "14%", top: "42%" },
+      { label: "3", left: "80%", top: "30%" },
+      { label: "4", left: "9%", top: "87%" }
     ],
     questions: [
       input("B1", "Picture 1", ["board game"], "Hình số 1 là một board game."),
