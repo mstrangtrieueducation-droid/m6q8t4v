@@ -21,12 +21,11 @@ const sections = [
     title: "Look and write the words.",
     note: "Dùng các từ: game, comic book, pins, board game, doll.",
     points: 4,
-    sectionImage: `${ASSET}page1-img_p0_5.png`,
     questions: [
-      input("B1", "Picture 1", ["board game"], "Hình số 1 là một board game."),
-      input("B2", "Picture 2", ["comic book"], "Hình số 2 là một comic book."),
-      input("B3", "Picture 3", ["doll"], "Hình số 3 là một doll."),
-      input("B4", "Picture 4", ["game"], "Hình số 4 là một game.")
+      input("B1", "Picture 1", ["board game"], "Hình số 1 là một board game.", `${ASSET}b-picture-1-board-game.png`),
+      input("B2", "Picture 2", ["comic book"], "Hình số 2 là một comic book.", `${ASSET}b-picture-2-comic-book.png`),
+      input("B3", "Picture 3", ["doll"], "Hình số 3 là một doll.", `${ASSET}b-picture-3-doll.png`),
+      input("B4", "Picture 4", ["game"], "Hình số 4 là một game.", `${ASSET}b-picture-4-game.png`)
     ]
   },
   {
