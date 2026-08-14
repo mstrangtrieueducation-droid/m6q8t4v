@@ -50,14 +50,14 @@ const sections = [
   {
     letter: "D",
     title: "Circle or write the correct words.",
-    note: "Chọn dạng động từ đúng với chủ ngữ.",
+    note: "Nhìn từ đứng đầu câu (He, She, It) rồi chọn đúng dạng động từ.",
     points: 5,
     questions: [
-      choice("D1", "He ___ a cow.", ["has", "have"], "has", "He là ngôi thứ ba số ít nên dùng has."),
-      choice("D2", "It ___ need water.", ["don’t", "doesn’t"], "doesn’t", "It là ngôi thứ ba số ít nên dùng doesn’t."),
-      choice("D3", "She ___ an ice cream.", ["wants", "want"], "wants", "She là ngôi thứ ba số ít; động từ thêm -s: wants."),
-      choice("D4", "It ___ milk.", ["like", "likes"], "likes", "It là ngôi thứ ba số ít; động từ thêm -s: likes."),
-      choice("D5", "He doesn’t ___ a doll.", ["has", "have"], "have", "Sau doesn’t, động từ trở về dạng nguyên mẫu: have.")
+      choice("D1", "He ___ a cow.", ["has", "have"], "has", "He (cậu ấy) đi với has. Câu đúng là: He has a cow."),
+      choice("D2", "It ___ need water.", ["don’t", "doesn’t"], "doesn’t", "Với It, câu phủ định dùng doesn’t. Câu đúng là: It doesn’t need water."),
+      choice("D3", "She ___ an ice cream.", ["wants", "want"], "wants", "Với She, động từ want thêm -s thành wants. Câu đúng là: She wants an ice cream."),
+      choice("D4", "It ___ milk.", ["like", "likes"], "likes", "Với It, động từ like thêm -s thành likes. Câu đúng là: It likes milk."),
+      choice("D5", "He doesn’t ___ a doll.", ["has", "have"], "have", "Khi đã có doesn’t, động từ phía sau giữ nguyên là have, không dùng has. Câu đúng là: He doesn’t have a doll.")
     ]
   },
   {
@@ -66,9 +66,9 @@ const sections = [
     note: "Quan sát hình rồi điền cụm từ phù hợp.",
     points: 3,
     questions: [
-      input("E1", "She ___ soup.", ["doesn't want", "does not want"], "Hình cho thấy cô bé không muốn món soup, nên dùng doesn’t want.", `${ASSET}page2-img_p1_2.png`),
-      input("E2", "He ___ cucumbers.", ["doesn't like", "does not like"], "Hình cho thấy cậu bé không thích cucumbers, nên dùng doesn’t like.", `${ASSET}page2-img_p1_4.png`),
-      input("E3", "She ___ a backpack.", ["needs"], "Hình cho thấy cô bé cần một backpack, nên dùng needs.", `${ASSET}page2-img_p1_5.png`)
+      input("E1", "She ___ soup.", ["doesn't want", "does not want"], "Cô bé không muốn soup nên dùng doesn’t want. Sau doesn’t, want giữ nguyên. Câu đúng là: She doesn’t want soup.", `${ASSET}page2-img_p1_2.png`),
+      input("E2", "He ___ cucumbers.", ["doesn't like", "does not like"], "Cậu bé không thích cucumbers nên dùng doesn’t like. Sau doesn’t, like giữ nguyên. Câu đúng là: He doesn’t like cucumbers.", `${ASSET}page2-img_p1_4.png`),
+      input("E3", "She ___ a backpack.", ["needs"], "Cô bé cần một chiếc backpack. Với She, động từ need thêm -s thành needs. Câu đúng là: She needs a backpack.", `${ASSET}page2-img_p1_5.png`)
     ]
   },
   {
@@ -137,27 +137,27 @@ const sections = [
   {
     letter: "K",
     title: "Look at the pictures. Complete the questions and answers.",
-    note: "Mỗi câu có hai chỗ cần hoàn thành.",
+    note: "A hỏi, B trả lời. Điền phần còn thiếu để hoàn thành từng câu.",
     points: 8,
     questions: [
       pair("K1", "Picture 1", `${ASSET}page4-img_p3_6.png`,
         ["what does he", "what does he want", "what does the boy want"],
         ["he wants", "he wants stickers and pins", "he wants pins and stickers"],
         "want?", "stickers and pins.",
-        "Dùng What does he want? để hỏi mong muốn; câu trả lời là He wants stickers and pins."),
+        "A hỏi: What does he want? Sau does, want giữ nguyên. B trả lời: He wants stickers and pins."),
       pair("K2", "Picture 2", `${ASSET}page4-img_p3_7.png`,
         ["does she", "does she need a pen"], ["yes she does"],
         "need a pen?", "",
-        "Câu hỏi dùng Does she need a pen?; trả lời khẳng định Yes, she does."),
+        "A hỏi: Does she need a pen? Sau does, need giữ nguyên. B trả lời ngắn: Yes, she does."),
       pair("K3", "Picture 3", `${ASSET}page4-img_p3_8.png`,
         ["does it", "does it like milk", "does the cat like milk"], ["yes it does"],
         "like milk?", "",
-        "Câu hỏi dùng Does it like milk?; trả lời khẳng định Yes, it does."),
+        "A hỏi: Does it like milk? Sau does, like giữ nguyên. B trả lời ngắn: Yes, it does."),
       pair("K4", "Picture 4", `${ASSET}page4-img_p3_9.png`,
         ["what does she", "what does she have", "what does the girl have"],
         ["she has", "she has grapes and mangoes", "she has mangoes and grapes"],
         "have?", "grapes and mangoes.",
-        "Dùng What does she have?; câu trả lời là She has grapes and mangoes.")
+        "A hỏi: What does she have? Sau does, have giữ nguyên. B trả lời: She has grapes and mangoes.")
     ]
   }
 ];
