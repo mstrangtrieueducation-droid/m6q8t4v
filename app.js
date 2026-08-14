@@ -21,11 +21,18 @@ const sections = [
     title: "Look and write the words.",
     note: "Dùng các từ: game, comic book, pins, board game, doll.",
     points: 4,
+    sectionImage: `${ASSET}page1-img_p0_5.png`,
+    imageMarkers: [
+      { label: "1", left: "74%", top: "69%" },
+      { label: "2", left: "30%", top: "18%" },
+      { label: "3", left: "72%", top: "17%" },
+      { label: "4", left: "28%", top: "69%" }
+    ],
     questions: [
-      input("B1", "Picture 1", ["board game"], "Hình số 1 là một board game.", `${ASSET}b-picture-1-board-game.png`),
-      input("B2", "Picture 2", ["comic book"], "Hình số 2 là một comic book.", `${ASSET}b-picture-2-comic-book.png`),
-      input("B3", "Picture 3", ["doll"], "Hình số 3 là một doll.", `${ASSET}b-picture-3-doll.png`),
-      input("B4", "Picture 4", ["game"], "Hình số 4 là một game.", `${ASSET}b-picture-4-game.png`)
+      input("B1", "Picture 1", ["board game"], "Hình số 1 là một board game."),
+      input("B2", "Picture 2", ["comic book"], "Hình số 2 là một comic book."),
+      input("B3", "Picture 3", ["doll"], "Hình số 3 là một doll."),
+      input("B4", "Picture 4", ["game"], "Hình số 4 là một game.")
     ]
   },
   {
@@ -247,7 +254,7 @@ function renderSections() {
         <span class="section-points">/${section.points}</span>
       </header>
       ${section.audio ? `<div class="audio-panel"><p>Audio phần ${section.letter}</p><audio controls preload="metadata" src="${section.audio}"></audio></div>` : ""}
-      ${section.sectionImage ? `<img class="source-image" src="${section.sectionImage}" alt="Hình minh hoạ phần ${section.letter}">` : ""}
+      ${renderSectionImage(section)}
       <div class="question-list">${section.questions.map((question, index) => renderQuestion(section, question, index)).join("")}</div>
     `;
     sectionsRoot.appendChild(sectionElement);
@@ -265,9 +272,9 @@ function renderQuestion(section, question, index) {
   } else if (question.type === "input") {
     control = `<input class="answer-input" data-input="${question.id}" autocomplete="off" spellcheck="false" placeholder="Nhập câu trả lời">`;
   } else {
-    control = `<div class="paired-inputs">
-      <label class="input-label"><span>Question</span><span class="sentence-completion"><input class="answer-input" data-pair="question" autocomplete="off" spellcheck="false" placeholder="Điền phần còn thiếu"><b>${question.questionSuffix}</b></span></label>
-      <label class="input-label"><span>Answer</span><span class="sentence-completion"><input class="answer-input" data-pair="answer" autocomplete="off" spellcheck="false" placeholder="Điền phần còn thiếu">${question.responseSuffix ? `<b>${question.responseSuffix}</b>` : ""}</span></label>
+    control = `<div class="paired-inputs dialogue-completion" aria-label="Hội thoại A và B">
+      <label class="input-label dialogue-turn"><span class="speaker-row"><b class="speaker-badge">A</b><span>hỏi</span></span><span class="sentence-completion"><input class="answer-input" data-pair="question" autocomplete="off" spellcheck="false" placeholder="Điền phần còn thiếu"><b>${question.questionSuffix}</b></span></label>
+      <label class="input-label dialogue-turn"><span class="speaker-row"><b class="speaker-badge speaker-b">B</b><span>trả lời</span></span><span class="sentence-completion"><input class="answer-input" data-pair="answer" autocomplete="off" spellcheck="false" placeholder="Điền phần còn thiếu">${question.responseSuffix ? `<b>${question.responseSuffix}</b>` : ""}</span></label>
     </div>`;
   }
   return `<article class="question" data-id="${question.id}" data-section="${section.letter}">
@@ -278,6 +285,17 @@ function renderQuestion(section, question, index) {
       ${control}
     </div>
   </article>`;
+}
+
+function renderSectionImage(section) {
+  if (!section.sectionImage) return "";
+  if (!section.imageMarkers) {
+    return `<img class="source-image" src="${section.sectionImage}" alt="Hình minh hoạ phần ${section.letter}">`;
+  }
+  return `<div class="numbered-source-image">
+    <img class="source-image" src="${section.sectionImage}" alt="Hình minh hoạ phần ${section.letter} có đánh số 1 đến 4">
+    ${section.imageMarkers.map(marker => `<span class="picture-marker" style="left:${marker.left};top:${marker.top}">${marker.label}</span>`).join("")}
+  </div>`;
 }
 
 function normalize(value) {
