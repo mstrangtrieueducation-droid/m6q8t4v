@@ -2,177 +2,763 @@ const ASSET = "assets/extracted/";
 
 const sections = [
   {
-    letter: "A",
-    title: "Listen and circle the correct words.",
-    note: "Nghe audio và chọn từ em nghe được.",
-    points: 6,
-    audio: "assets/audio/Listening-A.mp3",
-    questions: [
-      choice("A1", "1. Choose the word you hear.", ["board game", "game"], "game", "Trong audio, từ được đọc là “game”."),
-      choice("A2", "2. Choose the word you hear.", ["pins", "stickers"], "pins", "Trong audio, từ được đọc là “pins”."),
-      choice("A3", "3. Choose the word you hear.", ["farmer", "fancy"], "farmer", "Trong audio, từ được đọc là “farmer”."),
-      choice("A4", "4. Choose the word you hear.", ["milk", "market"], "milk", "Trong audio, từ được đọc là “milk”."),
-      choice("A5", "5. Choose the word you hear.", ["buy", "sell"], "sell", "Trong audio, từ được đọc là “sell”."),
-      choice("A6", "6. Choose the word you hear.", ["soup", "ice cream"], "ice cream", "Trong audio, cụm từ được đọc là “ice cream”.")
+    "letter": "A",
+    "title": "Listen and circle the correct words.",
+    "note": "Nghe audio và chọn từ em nghe được.",
+    "points": 6,
+    "audio": "assets/audio/Listening-A.mp3",
+    "questions": [
+      {
+        "id": "A1",
+        "type": "choice",
+        "prompt": "1. Choose the word you hear.",
+        "options": [
+          "board game",
+          "game"
+        ],
+        "answers": [
+          "game"
+        ],
+        "explanation": "Trong audio, từ được đọc là “game”.",
+        "image": "",
+        "points": 1
+      },
+      {
+        "id": "A2",
+        "type": "choice",
+        "prompt": "2. Choose the word you hear.",
+        "options": [
+          "pins",
+          "stickers"
+        ],
+        "answers": [
+          "pins"
+        ],
+        "explanation": "Trong audio, từ được đọc là “pins”.",
+        "image": "",
+        "points": 1
+      },
+      {
+        "id": "A3",
+        "type": "choice",
+        "prompt": "3. Choose the word you hear.",
+        "options": [
+          "farmer",
+          "fancy"
+        ],
+        "answers": [
+          "farmer"
+        ],
+        "explanation": "Trong audio, từ được đọc là “farmer”.",
+        "image": "",
+        "points": 1
+      },
+      {
+        "id": "A4",
+        "type": "choice",
+        "prompt": "4. Choose the word you hear.",
+        "options": [
+          "milk",
+          "market"
+        ],
+        "answers": [
+          "milk"
+        ],
+        "explanation": "Trong audio, từ được đọc là “milk”.",
+        "image": "",
+        "points": 1
+      },
+      {
+        "id": "A5",
+        "type": "choice",
+        "prompt": "5. Choose the word you hear.",
+        "options": [
+          "buy",
+          "sell"
+        ],
+        "answers": [
+          "sell"
+        ],
+        "explanation": "Trong audio, từ được đọc là “sell”.",
+        "image": "",
+        "points": 1
+      },
+      {
+        "id": "A6",
+        "type": "choice",
+        "prompt": "6. Choose the word you hear.",
+        "options": [
+          "soup",
+          "ice cream"
+        ],
+        "answers": [
+          "ice cream"
+        ],
+        "explanation": "Trong audio, cụm từ được đọc là “ice cream”.",
+        "image": "",
+        "points": 1
+      }
     ]
   },
   {
-    letter: "B",
-    title: "Look and write the words.",
-    note: "Chọn từ trong Word Bank để điền vào đúng hình.",
-    points: 4,
-    wordBank: ["game", "comic book", "pins", "board game", "doll"],
-    sectionImage: `${ASSET}page1-img_p0_5.png`,
-    imageMarkers: [
-      { label: "1", left: "47%", top: "78%" },
-      { label: "2", left: "14%", top: "42%" },
-      { label: "3", left: "80%", top: "30%" },
-      { label: "4", left: "9%", top: "87%" }
+    "letter": "B",
+    "title": "Look and write the words.",
+    "note": "Chọn từ trong Word Bank để điền vào đúng hình.",
+    "points": 4,
+    "wordBank": [
+      "game",
+      "comic book",
+      "pins",
+      "board game",
+      "doll"
     ],
-    questions: [
-      input("B1", "Picture 1", ["board game"], "Hình số 1 là một board game."),
-      input("B2", "Picture 2", ["comic book"], "Hình số 2 là một comic book."),
-      input("B3", "Picture 3", ["doll"], "Hình số 3 là một doll."),
-      input("B4", "Picture 4", ["game"], "Hình số 4 là một game.")
+    "sectionImage": "assets/extracted/page1-img_p0_5.png",
+    "imageMarkers": [
+      {
+        "label": "1",
+        "left": "47%",
+        "top": "78%"
+      },
+      {
+        "label": "2",
+        "left": "14%",
+        "top": "42%"
+      },
+      {
+        "label": "3",
+        "left": "80%",
+        "top": "30%"
+      },
+      {
+        "label": "4",
+        "left": "9%",
+        "top": "87%"
+      }
+    ],
+    "questions": [
+      {
+        "id": "B1",
+        "type": "input",
+        "prompt": "Picture 1",
+        "answers": [
+          "board game"
+        ],
+        "explanation": "Hình số 1 là một board game.",
+        "image": "",
+        "points": 1
+      },
+      {
+        "id": "B2",
+        "type": "input",
+        "prompt": "Picture 2",
+        "answers": [
+          "comic book"
+        ],
+        "explanation": "Hình số 2 là một comic book.",
+        "image": "",
+        "points": 1
+      },
+      {
+        "id": "B3",
+        "type": "input",
+        "prompt": "Picture 3",
+        "answers": [
+          "doll"
+        ],
+        "explanation": "Hình số 3 là một doll.",
+        "image": "",
+        "points": 1
+      },
+      {
+        "id": "B4",
+        "type": "input",
+        "prompt": "Picture 4",
+        "answers": [
+          "game"
+        ],
+        "explanation": "Hình số 4 là một game.",
+        "image": "",
+        "points": 1
+      }
     ]
   },
   {
-    letter: "C",
-    title: "Look at the pictures and letters. Write the words.",
-    note: "Sắp xếp lại các chữ cái để tạo thành từ đúng.",
-    points: 3,
-    questions: [
-      input("C1", "afremr", ["farmer"], "Sắp xếp afremr thành farmer.", `${ASSET}page1-img_p0_2.png`),
-      input("C2", "kaemrt", ["market"], "Sắp xếp kaemrt thành market.", `${ASSET}page1-img_p0_3.png`),
-      input("C3", "lapni", ["plain"], "Sắp xếp lapni thành plain.", `${ASSET}page1-img_p0_6.png`)
+    "letter": "C",
+    "title": "Look at the pictures and letters. Write the words.",
+    "note": "Sắp xếp lại các chữ cái để tạo thành từ đúng.",
+    "points": 3,
+    "questions": [
+      {
+        "id": "C1",
+        "type": "input",
+        "prompt": "afremr",
+        "answers": [
+          "farmer"
+        ],
+        "explanation": "Sắp xếp afremr thành farmer.",
+        "image": "assets/extracted/page1-img_p0_2.png",
+        "points": 1
+      },
+      {
+        "id": "C2",
+        "type": "input",
+        "prompt": "kaemrt",
+        "answers": [
+          "market"
+        ],
+        "explanation": "Sắp xếp kaemrt thành market.",
+        "image": "assets/extracted/page1-img_p0_3.png",
+        "points": 1
+      },
+      {
+        "id": "C3",
+        "type": "input",
+        "prompt": "lapni",
+        "answers": [
+          "plain"
+        ],
+        "explanation": "Sắp xếp lapni thành plain.",
+        "image": "assets/extracted/page1-img_p0_6.png",
+        "points": 1
+      }
     ]
   },
   {
-    letter: "D",
-    title: "Circle or write the correct words.",
-    note: "Nhìn chủ ngữ đầu câu: He = cậu ấy, She = cô ấy, It = nó. Sau đó chọn đúng dạng động từ.",
-    points: 5,
-    questions: [
-      choice("D1", "He ___ a cow.", ["has", "have"], "has", "He dùng để chỉ một người nam (cậu ấy/anh ấy). Với He, have đổi thành has. Câu đúng là: He has a cow."),
-      choice("D2", "It ___ need water.", ["don’t", "doesn’t"], "doesn’t", "It dùng để chỉ một con vật hoặc đồ vật (nó). Muốn nói “nó không cần”, ta dùng doesn’t need. Câu đúng là: It doesn’t need water."),
-      choice("D3", "She ___ an ice cream.", ["wants", "want"], "wants", "She dùng để chỉ một người nữ (cô ấy). Với She, động từ want thêm -s thành wants. Câu đúng là: She wants an ice cream."),
-      choice("D4", "It ___ milk.", ["like", "likes"], "likes", "It dùng để chỉ một con vật hoặc đồ vật (nó). Với It, động từ like thêm -s thành likes. Câu đúng là: It likes milk."),
-      choice("D5", "He doesn’t ___ a doll.", ["has", "have"], "have", "He dùng để chỉ một người nam (cậu ấy/anh ấy). Khi đã có doesn’t, động từ phía sau giữ nguyên là have, không dùng has. Câu đúng là: He doesn’t have a doll.")
+    "letter": "D",
+    "title": "Circle or write the correct words.",
+    "note": "Nhìn chủ ngữ đầu câu: He = cậu ấy, She = cô ấy, It = nó. Sau đó chọn đúng dạng động từ.",
+    "points": 5,
+    "questions": [
+      {
+        "id": "D1",
+        "type": "choice",
+        "prompt": "He ___ a cow.",
+        "options": [
+          "has",
+          "have"
+        ],
+        "answers": [
+          "has"
+        ],
+        "explanation": "He dùng để chỉ một người nam (cậu ấy/anh ấy). Với He, have đổi thành has. Câu đúng là: He has a cow.",
+        "image": "",
+        "points": 1
+      },
+      {
+        "id": "D2",
+        "type": "choice",
+        "prompt": "It ___ need water.",
+        "options": [
+          "don’t",
+          "doesn’t"
+        ],
+        "answers": [
+          "doesn’t"
+        ],
+        "explanation": "It dùng để chỉ một con vật hoặc đồ vật (nó). Muốn nói “nó không cần”, ta dùng doesn’t need. Câu đúng là: It doesn’t need water.",
+        "image": "",
+        "points": 1
+      },
+      {
+        "id": "D3",
+        "type": "choice",
+        "prompt": "She ___ an ice cream.",
+        "options": [
+          "wants",
+          "want"
+        ],
+        "answers": [
+          "wants"
+        ],
+        "explanation": "She dùng để chỉ một người nữ (cô ấy). Với She, động từ want thêm -s thành wants. Câu đúng là: She wants an ice cream.",
+        "image": "",
+        "points": 1
+      },
+      {
+        "id": "D4",
+        "type": "choice",
+        "prompt": "It ___ milk.",
+        "options": [
+          "like",
+          "likes"
+        ],
+        "answers": [
+          "likes"
+        ],
+        "explanation": "It dùng để chỉ một con vật hoặc đồ vật (nó). Với It, động từ like thêm -s thành likes. Câu đúng là: It likes milk.",
+        "image": "",
+        "points": 1
+      },
+      {
+        "id": "D5",
+        "type": "choice",
+        "prompt": "He doesn’t ___ a doll.",
+        "options": [
+          "has",
+          "have"
+        ],
+        "answers": [
+          "have"
+        ],
+        "explanation": "He dùng để chỉ một người nam (cậu ấy/anh ấy). Khi đã có doesn’t, động từ phía sau giữ nguyên là have, không dùng has. Câu đúng là: He doesn’t have a doll.",
+        "image": "",
+        "points": 1
+      }
     ]
   },
   {
-    letter: "E",
-    title: "Complete with doesn’t like, doesn’t want, or needs.",
-    note: "Quan sát hình rồi điền cụm từ phù hợp.",
-    points: 3,
-    questions: [
-      input("E1", "She ___ soup.", ["doesn't want", "does not want"], "She dùng để chỉ một người nữ (cô ấy). Trong hình, cô bé không muốn soup nên dùng doesn’t want. Sau doesn’t, want giữ nguyên. Câu đúng là: She doesn’t want soup.", `${ASSET}page2-img_p1_2.png`),
-      input("E2", "He ___ cucumbers.", ["doesn't like", "does not like"], "He dùng để chỉ một người nam (cậu ấy/anh ấy). Trong hình, cậu bé không thích cucumbers nên dùng doesn’t like. Sau doesn’t, like giữ nguyên. Câu đúng là: He doesn’t like cucumbers.", `${ASSET}page2-img_p1_4.png`),
-      input("E3", "She ___ a backpack.", ["needs"], "She dùng để chỉ một người nữ (cô ấy). Trong hình, cô bé cần một chiếc backpack. Với She, need thêm -s thành needs. Câu đúng là: She needs a backpack.", `${ASSET}page2-img_p1_5.png`)
+    "letter": "E",
+    "title": "Complete with doesn’t like, doesn’t want, or needs.",
+    "note": "Quan sát hình rồi điền cụm từ phù hợp.",
+    "points": 3,
+    "questions": [
+      {
+        "id": "E1",
+        "type": "input",
+        "prompt": "She ___ soup.",
+        "answers": [
+          "doesn't want",
+          "does not want"
+        ],
+        "explanation": "She dùng để chỉ một người nữ (cô ấy). Trong hình, cô bé không muốn soup nên dùng doesn’t want. Sau doesn’t, want giữ nguyên. Câu đúng là: She doesn’t want soup.",
+        "image": "assets/extracted/page2-img_p1_2.png",
+        "points": 1
+      },
+      {
+        "id": "E2",
+        "type": "input",
+        "prompt": "He ___ cucumbers.",
+        "answers": [
+          "doesn't like",
+          "does not like"
+        ],
+        "explanation": "He dùng để chỉ một người nam (cậu ấy/anh ấy). Trong hình, cậu bé không thích cucumbers nên dùng doesn’t like. Sau doesn’t, like giữ nguyên. Câu đúng là: He doesn’t like cucumbers.",
+        "image": "assets/extracted/page2-img_p1_4.png",
+        "points": 1
+      },
+      {
+        "id": "E3",
+        "type": "input",
+        "prompt": "She ___ a backpack.",
+        "answers": [
+          "needs"
+        ],
+        "explanation": "She dùng để chỉ một người nữ (cô ấy). Trong hình, cô bé cần một chiếc backpack. Với She, need thêm -s thành needs. Câu đúng là: She needs a backpack.",
+        "image": "assets/extracted/page2-img_p1_5.png",
+        "points": 1
+      }
     ]
   },
   {
-    letter: "F",
-    title: "Look at the picture. Write True or False.",
-    note: "Đối chiếu từng câu với bức tranh.",
-    points: 4,
-    sectionImage: `${ASSET}page2-img_p1_3.png`,
-    questions: [
-      choice("F1", "He doesn’t like avocados.", ["True", "False"], "True", "Cậu bé thể hiện không thích avocados, vì vậy câu này đúng."),
-      choice("F2", "She doesn’t have carrots.", ["True", "False"], "False", "Trong tranh cô bé có carrots, vì vậy câu phủ định này sai."),
-      choice("F3", "He doesn’t need an eraser.", ["True", "False"], "False", "Trong tranh cậu bé cần một eraser, vì vậy câu phủ định này sai."),
-      choice("F4", "She wants an orange.", ["True", "False"], "True", "Trong tranh cô bé muốn một orange, vì vậy câu này đúng.")
+    "letter": "F",
+    "title": "Look at the picture. Write True or False.",
+    "note": "Đối chiếu từng câu với bức tranh.",
+    "points": 4,
+    "sectionImage": "assets/extracted/page2-img_p1_3.png",
+    "questions": [
+      {
+        "id": "F1",
+        "type": "choice",
+        "prompt": "He doesn’t like avocados.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "answers": [
+          "True"
+        ],
+        "explanation": "Cậu bé thể hiện không thích avocados, vì vậy câu này đúng.",
+        "image": "",
+        "points": 1
+      },
+      {
+        "id": "F2",
+        "type": "choice",
+        "prompt": "She doesn’t have carrots.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "answers": [
+          "False"
+        ],
+        "explanation": "Trong tranh cô bé có carrots, vì vậy câu phủ định này sai.",
+        "image": "",
+        "points": 1
+      },
+      {
+        "id": "F3",
+        "type": "choice",
+        "prompt": "He doesn’t need an eraser.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "answers": [
+          "False"
+        ],
+        "explanation": "Trong tranh cậu bé cần một eraser, vì vậy câu phủ định này sai.",
+        "image": "",
+        "points": 1
+      },
+      {
+        "id": "F4",
+        "type": "choice",
+        "prompt": "She wants an orange.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "answers": [
+          "True"
+        ],
+        "explanation": "Trong tranh cô bé muốn một orange, vì vậy câu này đúng.",
+        "image": "",
+        "points": 1
+      }
     ]
   },
   {
-    letter: "G",
-    title: "Look and circle the correct words.",
-    note: "Quan sát từng hình và chọn từ đúng.",
-    points: 5,
-    questions: [
-      choice("G1", "Picture 1", ["soda", "juice"], "juice", "Hình là một hộp và cốc orange juice.", `${ASSET}page3-img_p2_6.png`),
-      choice("G2", "Picture 2", ["grapes", "sandwich"], "sandwich", "Hình là một sandwich.", `${ASSET}page3-img_p2_7.png`),
-      choice("G3", "Picture 3", ["chips", "cookie"], "cookie", "Hình là một cookie.", `${ASSET}page3-img_p2_8.png`),
-      choice("G4", "Picture 4", ["juice", "grapes"], "grapes", "Hình là một chùm grapes.", `${ASSET}page3-img_p2_2.png`),
-      choice("G5", "Picture 5", ["sandwich", "chips"], "chips", "Hình là một gói chips.", `${ASSET}page3-img_p2_9.png`)
+    "letter": "G",
+    "title": "Look and circle the correct words.",
+    "note": "Quan sát từng hình và chọn từ đúng.",
+    "points": 5,
+    "questions": [
+      {
+        "id": "G1",
+        "type": "choice",
+        "prompt": "Picture 1",
+        "options": [
+          "soda",
+          "juice"
+        ],
+        "answers": [
+          "juice"
+        ],
+        "explanation": "Hình là một hộp và cốc orange juice.",
+        "image": "assets/extracted/page3-img_p2_6.png",
+        "points": 1
+      },
+      {
+        "id": "G2",
+        "type": "choice",
+        "prompt": "Picture 2",
+        "options": [
+          "grapes",
+          "sandwich"
+        ],
+        "answers": [
+          "sandwich"
+        ],
+        "explanation": "Hình là một sandwich.",
+        "image": "assets/extracted/page3-img_p2_7.png",
+        "points": 1
+      },
+      {
+        "id": "G3",
+        "type": "choice",
+        "prompt": "Picture 3",
+        "options": [
+          "chips",
+          "cookie"
+        ],
+        "answers": [
+          "cookie"
+        ],
+        "explanation": "Hình là một cookie.",
+        "image": "assets/extracted/page3-img_p2_8.png",
+        "points": 1
+      },
+      {
+        "id": "G4",
+        "type": "choice",
+        "prompt": "Picture 4",
+        "options": [
+          "juice",
+          "grapes"
+        ],
+        "answers": [
+          "grapes"
+        ],
+        "explanation": "Hình là một chùm grapes.",
+        "image": "assets/extracted/page3-img_p2_2.png",
+        "points": 1
+      },
+      {
+        "id": "G5",
+        "type": "choice",
+        "prompt": "Picture 5",
+        "options": [
+          "sandwich",
+          "chips"
+        ],
+        "answers": [
+          "chips"
+        ],
+        "explanation": "Hình là một gói chips.",
+        "image": "assets/extracted/page3-img_p2_9.png",
+        "points": 1
+      }
     ]
   },
   {
-    letter: "H",
-    title: "Complete the sentences.",
-    note: "Nhìn hình và điền một từ phù hợp.",
-    points: 4,
-    questions: [
-      input("H1", "My aunt works in a school. She is a ___.", ["teacher"], "Người làm việc và dạy học ở trường là a teacher.", `${ASSET}page3-img_p2_3.png`),
-      input("H2", "My dad likes his job. He is a ___.", ["police officer", "policeman"], "Hình cho thấy một police officer.", `${ASSET}page3-img_p2_10.png`),
-      input("H3", "Ann wants a jacket. She needs ___ to buy it.", ["money"], "Cần money để mua một chiếc jacket.", `${ASSET}page3-img_p2_4.png`),
-      input("H4", "When I’m hot, I drink ___.", ["water"], "Khi nóng, em uống water.", `${ASSET}page3-img_p2_11.png`)
+    "letter": "H",
+    "title": "Complete the sentences.",
+    "note": "Nhìn hình và điền một từ phù hợp.",
+    "points": 4,
+    "questions": [
+      {
+        "id": "H1",
+        "type": "input",
+        "prompt": "My aunt works in a school. She is a ___.",
+        "answers": [
+          "teacher"
+        ],
+        "explanation": "Người làm việc và dạy học ở trường là a teacher.",
+        "image": "assets/extracted/page3-img_p2_3.png",
+        "points": 1
+      },
+      {
+        "id": "H2",
+        "type": "input",
+        "prompt": "My dad likes his job. He is a ___.",
+        "answers": [
+          "police officer",
+          "policeman"
+        ],
+        "explanation": "Hình cho thấy một police officer.",
+        "image": "assets/extracted/page3-img_p2_10.png",
+        "points": 1
+      },
+      {
+        "id": "H3",
+        "type": "input",
+        "prompt": "Ann wants a jacket. She needs ___ to buy it.",
+        "answers": [
+          "money"
+        ],
+        "explanation": "Cần money để mua một chiếc jacket.",
+        "image": "assets/extracted/page3-img_p2_4.png",
+        "points": 1
+      },
+      {
+        "id": "H4",
+        "type": "input",
+        "prompt": "When I’m hot, I drink ___.",
+        "answers": [
+          "water"
+        ],
+        "explanation": "Khi nóng, em uống water.",
+        "image": "assets/extracted/page3-img_p2_11.png",
+        "points": 1
+      }
     ]
   },
   {
-    letter: "I",
-    title: "Listen and complete the sentences.",
-    note: "Nghe audio và điền từ còn thiếu.",
-    points: 4,
-    audio: "assets/audio/Listening-I.mp3",
-    questions: [
-      input("I1", "Cats and dogs don’t need ___.", ["clothes"], "Trong audio, câu hoàn chỉnh là: Cats and dogs don’t need clothes."),
-      input("I2", "___ keep us healthy.", ["doctors"], "Trong audio, chủ ngữ là Doctors."),
-      input("I3", "People get ___ from jobs.", ["money"], "Trong audio, từ còn thiếu là money."),
-      input("I4", "It’s good to drink ___ in the morning.", ["juice"], "Trong audio, từ còn thiếu là juice.")
+    "letter": "I",
+    "title": "Listen and complete the sentences.",
+    "note": "Nghe audio và điền từ còn thiếu.",
+    "points": 4,
+    "audio": "assets/audio/Listening-I.mp3",
+    "questions": [
+      {
+        "id": "I1",
+        "type": "input",
+        "prompt": "Cats and dogs don’t need ___.",
+        "answers": [
+          "clothes"
+        ],
+        "explanation": "Trong audio, câu hoàn chỉnh là: Cats and dogs don’t need clothes.",
+        "image": "",
+        "points": 1
+      },
+      {
+        "id": "I2",
+        "type": "input",
+        "prompt": "___ keep us healthy.",
+        "answers": [
+          "doctors"
+        ],
+        "explanation": "Trong audio, chủ ngữ là Doctors.",
+        "image": "",
+        "points": 1
+      },
+      {
+        "id": "I3",
+        "type": "input",
+        "prompt": "People get ___ from jobs.",
+        "answers": [
+          "money"
+        ],
+        "explanation": "Trong audio, từ còn thiếu là money.",
+        "image": "",
+        "points": 1
+      },
+      {
+        "id": "I4",
+        "type": "input",
+        "prompt": "It’s good to drink ___ in the morning.",
+        "answers": [
+          "juice"
+        ],
+        "explanation": "Trong audio, từ còn thiếu là juice.",
+        "image": "",
+        "points": 1
+      }
     ]
   },
   {
-    letter: "J",
-    title: "Look at the pictures and circle the answers.",
-    note: "Quan sát hình rồi chọn câu trả lời đầy đủ.",
-    points: 4,
-    questions: [
-      choice("J1", "Does he need a jacket?", ["Yes, he does.", "No, he doesn’t."], "Yes, he does.", "Cậu bé đang ở ngoài trời tuyết và cần một chiếc jacket.", `${ASSET}page4-img_p3_2.png`),
-      choice("J2", "Does she have a board game?", ["Yes, she does.", "No, she doesn’t."], "No, she doesn’t.", "Cô bé đang cầm một doll, không phải board game.", `${ASSET}page4-img_p3_3.png`),
-      choice("J3", "Does she want a cookie?", ["Yes, she does.", "No, she doesn’t."], "Yes, she does.", "Bong bóng suy nghĩ cho thấy cô bé muốn một cookie.", `${ASSET}page4-img_p3_4.png`),
-      choice("J4", "Does it want water?", ["Yes, it does.", "No, it doesn’t."], "Yes, it does.", "Chú chó nhìn bát water và muốn uống nước.", `${ASSET}page4-img_p3_5.png`)
+    "letter": "J",
+    "title": "Look at the pictures and circle the answers.",
+    "note": "Quan sát hình rồi chọn câu trả lời đầy đủ.",
+    "points": 4,
+    "questions": [
+      {
+        "id": "J1",
+        "type": "choice",
+        "prompt": "Does he need a jacket?",
+        "options": [
+          "Yes, he does.",
+          "No, he doesn’t."
+        ],
+        "answers": [
+          "Yes, he does."
+        ],
+        "explanation": "Cậu bé đang ở ngoài trời tuyết và cần một chiếc jacket.",
+        "image": "assets/extracted/page4-img_p3_2.png",
+        "points": 1
+      },
+      {
+        "id": "J2",
+        "type": "choice",
+        "prompt": "Does she have a board game?",
+        "options": [
+          "Yes, she does.",
+          "No, she doesn’t."
+        ],
+        "answers": [
+          "No, she doesn’t."
+        ],
+        "explanation": "Cô bé đang cầm một doll, không phải board game.",
+        "image": "assets/extracted/page4-img_p3_3.png",
+        "points": 1
+      },
+      {
+        "id": "J3",
+        "type": "choice",
+        "prompt": "Does she want a cookie?",
+        "options": [
+          "Yes, she does.",
+          "No, she doesn’t."
+        ],
+        "answers": [
+          "Yes, she does."
+        ],
+        "explanation": "Bong bóng suy nghĩ cho thấy cô bé muốn một cookie.",
+        "image": "assets/extracted/page4-img_p3_4.png",
+        "points": 1
+      },
+      {
+        "id": "J4",
+        "type": "choice",
+        "prompt": "Does it want water?",
+        "options": [
+          "Yes, it does.",
+          "No, it doesn’t."
+        ],
+        "answers": [
+          "Yes, it does."
+        ],
+        "explanation": "Chú chó nhìn bát water và muốn uống nước.",
+        "image": "assets/extracted/page4-img_p3_5.png",
+        "points": 1
+      }
     ]
   },
   {
-    letter: "K",
-    title: "Look at the pictures. Complete the questions and answers.",
-    note: "A hỏi, B trả lời. Điền phần còn thiếu để hoàn thành từng câu.",
-    points: 8,
-    questions: [
-      pair("K1", "Picture 1", `${ASSET}page4-img_p3_6.png`,
-        ["what does he", "what does he want", "what does the boy want"],
-        ["he wants", "he wants stickers and pins", "he wants pins and stickers"],
-        "want?", "stickers and pins.",
-        "He dùng để chỉ một người nam (cậu ấy/anh ấy). A hỏi: What does he want? Sau does, want giữ nguyên. B trả lời: He wants stickers and pins."),
-      pair("K2", "Picture 2", `${ASSET}page4-img_p3_7.png`,
-        ["does she", "does she need a pen"], ["yes she does"],
-        "need a pen?", "",
-        "She dùng để chỉ một người nữ (cô ấy). A hỏi: Does she need a pen? Sau does, need giữ nguyên. B trả lời ngắn: Yes, she does."),
-      pair("K3", "Picture 3", `${ASSET}page4-img_p3_8.png`,
-        ["does it", "does it like milk", "does the cat like milk"], ["yes it does"],
-        "like milk?", "",
-        "It dùng để chỉ một con vật hoặc đồ vật (nó). A hỏi: Does it like milk? Sau does, like giữ nguyên. B trả lời ngắn: Yes, it does."),
-      pair("K4", "Picture 4", `${ASSET}page4-img_p3_9.png`,
-        ["what does she", "what does she have", "what does the girl have"],
-        ["she has", "she has grapes and mangoes", "she has mangoes and grapes"],
-        "have?", "grapes and mangoes.",
-        "She dùng để chỉ một người nữ (cô ấy). A hỏi: What does she have? Sau does, have giữ nguyên. B trả lời: She has grapes and mangoes.")
+    "letter": "K",
+    "title": "Look at the pictures. Complete the questions and answers.",
+    "note": "A hỏi, B trả lời. Điền phần còn thiếu để hoàn thành từng câu.",
+    "points": 8,
+    "questions": [
+      {
+        "id": "K1",
+        "type": "pair",
+        "prompt": "Picture 1",
+        "image": "assets/extracted/page4-img_p3_6.png",
+        "questionAnswers": [
+          "what does he",
+          "what does he want",
+          "what does the boy want"
+        ],
+        "responseAnswers": [
+          "he wants",
+          "he wants stickers and pins",
+          "he wants pins and stickers"
+        ],
+        "questionSuffix": "want?",
+        "responseSuffix": "stickers and pins.",
+        "explanation": "He dùng để chỉ một người nam (cậu ấy/anh ấy). A hỏi: What does he want? Sau does, want giữ nguyên. B trả lời: He wants stickers and pins.",
+        "points": 2
+      },
+      {
+        "id": "K2",
+        "type": "pair",
+        "prompt": "Picture 2",
+        "image": "assets/extracted/page4-img_p3_7.png",
+        "questionAnswers": [
+          "does she",
+          "does she need a pen"
+        ],
+        "responseAnswers": [
+          "yes she does"
+        ],
+        "questionSuffix": "need a pen?",
+        "responseSuffix": "",
+        "explanation": "She dùng để chỉ một người nữ (cô ấy). A hỏi: Does she need a pen? Sau does, need giữ nguyên. B trả lời ngắn: Yes, she does.",
+        "points": 2
+      },
+      {
+        "id": "K3",
+        "type": "pair",
+        "prompt": "Picture 3",
+        "image": "assets/extracted/page4-img_p3_8.png",
+        "questionAnswers": [
+          "does it",
+          "does it like milk",
+          "does the cat like milk"
+        ],
+        "responseAnswers": [
+          "yes it does"
+        ],
+        "questionSuffix": "like milk?",
+        "responseSuffix": "",
+        "explanation": "It dùng để chỉ một con vật hoặc đồ vật (nó). A hỏi: Does it like milk? Sau does, like giữ nguyên. B trả lời ngắn: Yes, it does.",
+        "points": 2
+      },
+      {
+        "id": "K4",
+        "type": "pair",
+        "prompt": "Picture 4",
+        "image": "assets/extracted/page4-img_p3_9.png",
+        "questionAnswers": [
+          "what does she",
+          "what does she have",
+          "what does the girl have"
+        ],
+        "responseAnswers": [
+          "she has",
+          "she has grapes and mangoes",
+          "she has mangoes and grapes"
+        ],
+        "questionSuffix": "have?",
+        "responseSuffix": "grapes and mangoes.",
+        "explanation": "She dùng để chỉ một người nữ (cô ấy). A hỏi: What does she have? Sau does, have giữ nguyên. B trả lời: She has grapes and mangoes.",
+        "points": 2
+      }
     ]
   }
 ];
-
-function choice(id, prompt, options, answer, explanation, image = "") {
-  return { id, type: "choice", prompt, options, answers: [answer], explanation, image, points: 1 };
-}
-
-function input(id, prompt, answers, explanation, image = "") {
-  return { id, type: "input", prompt, answers, explanation, image, points: 1 };
-}
-
-function pair(id, prompt, image, questionAnswers, responseAnswers, questionSuffix, responseSuffix, explanation) {
-  return { id, type: "pair", prompt, image, questionAnswers, responseAnswers, questionSuffix, responseSuffix, explanation, points: 2 };
-}
 
 const form = document.querySelector("#testForm");
 const sectionsRoot = document.querySelector("#sections");
@@ -183,7 +769,7 @@ const results = document.querySelector("#results");
 const answerReview = document.querySelector("#answerReview");
 const scoreValue = document.querySelector("#scoreValue");
 const scoreMessage = document.querySelector("#scoreMessage");
-const STORAGE_KEY = "discover1-written-test6-v2";
+const STORAGE_KEY = "discover1-written-test6-v2-source-audit-v2";
 
 renderSections();
 restoreProgress();
@@ -317,10 +903,7 @@ function normalize(value) {
     .trim();
 }
 
-function matches(value, accepted) {
-  const normalized = normalize(value).replace(/does not/g, "doesn't");
-  return accepted.some(answer => normalize(answer).replace(/does not/g, "doesn't") === normalized);
-}
+function matches(value, accepted) { return DiscoverAnswerMatcher.matches(value, accepted); }
 
 function questionValue(question, element) {
   if (question.type === "choice") return element.dataset.value || "";
