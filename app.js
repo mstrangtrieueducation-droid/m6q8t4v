@@ -944,11 +944,11 @@ function gradeTest() {
       const answerCorrect = matches(value.answer, question.responseAnswers);
       earned = Number(questionCorrect) + Number(answerCorrect);
       correct = earned === 2;
-      shownAnswer = `${joinSentence(question.questionAnswers[0], question.questionSuffix)} / ${joinSentence(question.responseAnswers[0], question.responseSuffix)}`;
+      shownAnswer = `${DiscoverAnswerDisplay.formatAnswer(joinSentence(question.questionAnswers[0], question.questionSuffix), {kind: "question"})} / ${DiscoverAnswerDisplay.formatAnswer(joinSentence(question.responseAnswers[0], question.responseSuffix), {kind: "sentence"})}`;
     } else {
       correct = matches(value, question.answers);
       earned = correct ? 1 : 0;
-      shownAnswer = question.answers[0];
+      shownAnswer = DiscoverAnswerDisplay.formatAnswer(question.answers[0]);
     }
     score += earned;
     reviews.push({ section, question, label: `${section.letter}${index + 1}`, value, correct, earned, shownAnswer });
@@ -973,8 +973,8 @@ function renderReview(review) {
   return `<article class="review-card ${review.correct ? "" : "is-wrong"}">
     <div class="review-head"><h3>Câu ${review.label}</h3><span class="review-status">${review.earned}/${review.question.points} điểm</span></div>
     <p class="review-question">${review.question.prompt}</p>
-    <div class="review-answer"><span>Em trả lời: <b>${escapeHtml(studentAnswer)}</b></span><span>Đáp án: <b>${review.shownAnswer}</b></span></div>
-    <p class="explanation"><b>Giải thích:</b> ${review.question.explanation}</p>
+    <div class="review-answer"><span>Em trả lời: <b>${escapeHtml(studentAnswer)}</b></span><span>Đáp án: <b>${escapeHtml(review.shownAnswer)}</b></span></div>
+    <p class="explanation"><b>Giải thích:</b> ${escapeHtml(DiscoverAnswerDisplay.formatExplanation(review.question.explanation))}</p>
   </article>`;
 }
 
