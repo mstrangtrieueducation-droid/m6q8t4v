@@ -944,11 +944,11 @@ function gradeTest() {
       const answerCorrect = matches(value.answer, question.responseAnswers);
       earned = Number(questionCorrect) + Number(answerCorrect);
       correct = earned === 2;
-      shownAnswer = `${DiscoverAnswerDisplay.formatAnswer(joinSentence(question.questionAnswers[0], question.questionSuffix), {kind: "question"})} / ${DiscoverAnswerDisplay.formatAnswer(joinSentence(question.responseAnswers[0], question.responseSuffix), {kind: "sentence"})}`;
+      shownAnswer = `${DiscoverAnswerDisplay.formatAnswer(joinSentence(question.questionAnswers[0], question.questionSuffix), {section, question, kind: "question"})} / ${DiscoverAnswerDisplay.formatAnswer(joinSentence(question.responseAnswers[0], question.responseSuffix), {section, question, kind: "sentence"})}`;
     } else {
       correct = matches(value, question.answers);
       earned = correct ? 1 : 0;
-      shownAnswer = DiscoverAnswerDisplay.formatAnswer(question.answers[0]);
+      shownAnswer = DiscoverAnswerDisplay.formatAnswer(question.answers[0], {section, question});
     }
     score += earned;
     reviews.push({ section, question, label: `${section.letter}${index + 1}`, value, correct, earned, shownAnswer });
