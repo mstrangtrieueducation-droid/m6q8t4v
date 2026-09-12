@@ -184,7 +184,7 @@ const sections = [
   },
   {
     "letter": "C",
-    "title": "Look at the pictures and letters. Write the words.",
+    "title": "Look at the pictures. Look at the letters. Write the words.",
     "note": "Sắp xếp lại các chữ cái để tạo thành từ đúng.",
     "points": 3,
     "questions": [
